@@ -1,0 +1,52 @@
+{% include 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+
+
+        <form action="{% url 'signup' %}" method="POST">{% csrf_token %}
+
+            <div class="form-group">
+
+                <h2>SIGN UP</h2>
+
+                <label for="first_name">First name</label>
+                <input type="text" class="form-control" id="first_name" name="first_name"
+                    placeholder="Enter first name" required>
+
+                <label for="last_name">last name</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter last name" required>
+
+                
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username"
+                    placeholder="Enter username" required>
+
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp"
+                    placeholder="Enter email" required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password1" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Confirm password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password2" placeholder=" Confirm password" required>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                <label class="form-check-label" for="exampleCheck1">agree with terms and codition</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
